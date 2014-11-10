@@ -5,7 +5,12 @@ namespace MeshedSolutionsCore
 {
     public class EncryptionService
     {
-        public string GetHash(string password)
+        /// <summary>
+        /// Creates a hash of the provided value
+        /// </summary>
+        /// <param name="password">Value to encrypt</param>
+        /// <returns>Encrypted hash of the provided value</returns>
+        public static string GetHash(string password)
         {
             MD5 md5Hash = MD5.Create();
 
