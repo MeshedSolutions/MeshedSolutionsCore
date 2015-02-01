@@ -13,17 +13,17 @@ namespace MeshedSolutionsCore
 
             return null;
         }
-        public static void SetCookie(HttpResponseBase response, string applicationName, string cookieName, int cookieDuration, string cookieValue = "0")
+        public static void SetCookie(string applicationName, string cookieName, int cookieDuration, string cookieValue = "0")
         {
             var cookie = new HttpCookie(applicationName);
 
             cookie[cookieName] = cookieValue;
             cookie.Expires = DateTime.Now.AddDays(cookieDuration);
-            response.Cookies.Add(cookie);
+            HttpContext.Current.Response.Cookies.Add(cookie);
         }
-        public static void DeleteCookie(HttpResponseBase response, string applicationName, string cookieName)
+        public static void DeleteCookie(string applicationName, string cookieName)
         {
-            SetCookie(response, applicationName, cookieName, -1);
+            SetCookie(applicationName, cookieName, -1);
         }
         public static int GetUserID(string applicationName)
         {
