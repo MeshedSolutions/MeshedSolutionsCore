@@ -21,6 +21,14 @@ namespace MeshedSolutionsCore
             cookie.Expires = DateTime.Now.AddDays(cookieDuration);
             HttpContext.Current.Response.Cookies.Add(cookie);
         }
+        public static void SetCookie(HttpResponseBase response, string cookieName, int cookieDuration, string cookieValue = "0")
+        {
+            var cookie = new HttpCookie("MeatGrinder");
+
+            cookie[cookieName] = cookieValue;
+            cookie.Expires = DateTime.Now.AddDays(cookieDuration);
+            response.Cookies.Add(cookie);
+        }
         public static void DeleteCookie(string applicationName, string cookieName)
         {
             SetCookie(applicationName, cookieName, -1);
