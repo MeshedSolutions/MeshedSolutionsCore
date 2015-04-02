@@ -70,6 +70,7 @@
   <ItemGroup>
     <Compile Include="AuthorizeService.cs" />
     <Compile Include="CookieService.cs" />
+    <Compile Include="EmailService.cs" />
     <Compile Include="EncryptionService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

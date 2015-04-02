@@ -33,6 +33,10 @@ namespace MeshedSolutionsCore
         {
             SetCookie(applicationName, cookieName, -1);
         }
+        public static void DeleteCookie(HttpResponseBase response, string cookieName)
+        {
+            SetCookie(response, cookieName, -1);
+        }
         public static int GetUserID(string applicationName)
         {
             int userID = int.Parse(GetCookie(HttpContext.Current, applicationName, "UserID"));
