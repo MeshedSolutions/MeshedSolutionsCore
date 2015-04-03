@@ -42,6 +42,10 @@ namespace MeshedSolutionsCore
             int userID = int.Parse(GetCookie(HttpContext.Current, applicationName, "UserID"));
             return userID;
         }
-
+        public static int GetUserID(string applicationName, string fieldName)
+        {
+            int userID = int.Parse(GetCookie(HttpContext.Current, applicationName, fieldName));
+            return userID;
+        }
     }
 }

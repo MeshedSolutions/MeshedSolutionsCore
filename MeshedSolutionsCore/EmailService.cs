@@ -3,7 +3,7 @@ using System.Net.Mail;
 
 namespace MeshedSolutionsCore
 {
-    class EmailService
+    public class EmailService
     {
         private SmtpClient _smtpClient;
         private readonly string _smtpServer = string.Empty;
